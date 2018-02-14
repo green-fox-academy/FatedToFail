@@ -1,0 +1,4 @@
+CD ../ --> TAB kilistázza az ottani elemeket
+ctrl + c --> leállít minden futó folyamatot
+> ***.txt --> belemásolja az tartalmat a file-ba
+>> ***.txt --> hozzáfûz

@@ -1,0 +1,1 @@
+Azért tûnt el a <p>-k közötti hely, mert az elejn csillaggal 0-ztuk a margin/paddinget?
