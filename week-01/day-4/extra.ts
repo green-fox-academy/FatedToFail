@@ -1,33 +1,42 @@
 'use strict';
+//define the variables
 let firstNumber: number = 0;
 let secondNumber: number = 0;
-let interval: number = 150000;
+let interval: number = 50000;
 let sum: number = 0;
-let sum2: number = 0;
-let count: number = 7;
+
+//the cicle checking from 1 to interval if there's a friendly number pair
 for (let j: number = 1; j < interval; j++){
+    
     firstNumber = j
+    
+    //getting it's "friendly value"
     for(let i: number = 1; i < j; i++){
+        
         if((j % i) === 0){
+           
             secondNumber += i;
         }
     }
-       
+    
+    //checking the j's -"friendly value"-'s "friendly value"
     for(let i: number = 1; i < secondNumber; i++){
+        
         if((secondNumber % i) === 0){
+           
             sum += i;
         }
     }
-    if(sum === firstNumber){
+    
+    //if they're a friendly pair they gonna be displayed
+    if(sum === firstNumber){ 
         
-        sum2 += 1;    
         console.log(`${firstNumber} and ${secondNumber} are friendly numbers`);
         
     }
+    
+    //resetting the values
     firstNumber = 0;
     secondNumber = 0;
     sum = 0;
-/*    break(sum2 == count){
-
-    }*/
 }

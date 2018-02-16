@@ -15,7 +15,7 @@ let count: number = 0;
 while(count < 14){
     
     //this part is just for making it last longer, becouse if it's too fast
-    //the same timstamp will generate the same randomNumber
+    //the same timestamp will generate the same randomNumber
     for(let j: number = 1; j < 150000000; j++){ }
     
     //this generates the randomNumber
