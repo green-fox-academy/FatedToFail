@@ -2,7 +2,7 @@
 //define the variables
 let firstNumber: number = 0;
 let secondNumber: number = 0;
-let interval: number = 50000;
+let interval: number = 10000;
 let sum: number = 0;
 
 //the cicle checking from 1 to interval if there's a friendly number pair
@@ -40,3 +40,5 @@ for (let j: number = 1; j < interval; j++){
     secondNumber = 0;
     sum = 0;
 }
+let fArray: number [] = [1, 2, 3, 4, 5];
+fArray.splice()

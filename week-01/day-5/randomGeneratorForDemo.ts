@@ -9,7 +9,7 @@ let randomNumber: number = 0;
 let count: number = 0;
 
 //just a try how Date.now() defines it's value
-//console.log(Date.now());
+//console.log(Date.now());+
 
 //the cicle for the 14 output
 while(count < 14){
