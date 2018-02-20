@@ -20,4 +20,3 @@ function unique(arr:number[]):number[] {
 //  Example
 console.log(unique(array1));
 //  should print: `[1, 11, 34, 52, 61]`
-
