@@ -26,3 +26,4 @@ function bubble(arr: number[], check: boolean):number[]{
   return arr;
 }
 console.log(bubble(myArray,false));
+
