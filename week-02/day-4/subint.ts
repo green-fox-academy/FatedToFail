@@ -21,7 +21,7 @@ console.log(134 / 100 % 10) */
 
 function subint (check: number, arrCheck: number []): number[] {
   let output: number[] = [];
-  arrCheck.forEach((item: number, index: number) => {
+  arrCheck.forEach ((item: number, index: number) => {
     if (check === item % 10 || check === Math.floor(item / 10) % 10 || check === Math.floor(item / 100) % 10) {
       output.push(index);
     }
