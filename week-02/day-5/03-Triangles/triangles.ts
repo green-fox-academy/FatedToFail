@@ -17,11 +17,11 @@ function drawLine(max: number) {
       ctx.beginPath();
       ctx.moveTo(xStart, yStart);
       ctx.lineTo(xStart + scale, yStart);
-      ctx.lineTo(xStart + scale / 2, yStart - scale * Math.SQRT2 / 2);
+      ctx.lineTo(xStart + scale / 2, yStart - scale * Math.sqrt(3) / 2);
       ctx.lineTo(xStart, yStart);
       ctx.stroke();
       xStart += scale / 2;
-      yStart -= scale * Math.SQRT2 / 2;
+      yStart -= scale * Math.sqrt(3) / 2;
     }
     max -= 1;
     drawLine(max);
