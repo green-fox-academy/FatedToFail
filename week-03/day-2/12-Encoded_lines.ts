@@ -11,8 +11,8 @@ function halfIt(source: string): string {
     .map(e => e.split(' ')
       .map(e => e.split('')
         .map(e => encoder[encoder.indexOf(e) - 1]) 
-        .join(''))
-      .join(' '))
+      .join(''))
+    .join(' '))
     .join('\r\n');
 }
 
