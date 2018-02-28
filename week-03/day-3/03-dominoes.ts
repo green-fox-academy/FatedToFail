@@ -32,4 +32,6 @@ let dominoes = initializeDominoes();
 
 
 
-print(dominoes);
+//print(dominoes[3]);
+
+console.log(dominoes[2]);
