@@ -15,7 +15,7 @@ function initializeDominoes(): Domino[] {
 function print(dominoes: Domino[]) {
   let orderOfDomi: Domino[] = [];
   orderOfDomi.push(dominoes[0]);
-  for(let i: number = 0; i < dominoes.length; i++) {
+  for(let i: number = 0; i < dominoes.length - 1; i++) {
     dominoes.forEach(e => {
       if (orderOfDomi[i].values.toString().charAt(2) === e.values.toString().charAt(0)) {
         orderOfDomi.push(e);
