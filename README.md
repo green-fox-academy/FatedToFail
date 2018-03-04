@@ -4,7 +4,7 @@ https://github.com/FatedToFail/git-lesson-repository <br>
 https://github.com/FatedToFail/patchwork <br>
 https://github.com/FatedToFail/hello-world <br>
 My github.io: <br>
-https://fatedtofail.github.io/
+https://fatedtofail.github.io/ <br>
 And it's repository:<br>
 https://github.com/FatedToFail/FatedToFail.github.io <br>
 
