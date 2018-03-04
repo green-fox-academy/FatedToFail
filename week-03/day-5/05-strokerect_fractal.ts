@@ -3,7 +3,7 @@
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 const howBigTheCanvasIs: number = canvas.height < canvas.width ? canvas.height : canvas.width;
-const repetition: number = 3;
+const repetition: number = 3git;
 
 function drawIt(x: number, y: number, scale: number, end: number): void {
   
