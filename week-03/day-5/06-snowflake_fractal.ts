@@ -14,7 +14,7 @@ function drawIt(x: number, y: number, scale: number, end: number, color: string)
   ctx.lineTo(x + scale / 2, y + triHeight);
   ctx.lineTo(x - scale / 2, y + triHeight);
   ctx.lineTo(x, y);
-  ctx.fillStyle = `color`;
+  ctx.fillStyle = `${color}`;
   ctx.fill();
 
   ctx.beginPath();
@@ -22,17 +22,17 @@ function drawIt(x: number, y: number, scale: number, end: number, color: string)
   ctx.lineTo(x + scale / 2, y + triHeight / 3);
   ctx.lineTo(x - scale / 2, y + triHeight / 3);
   ctx.lineTo(x, y + triHeight + triHeight / 3);
-  ctx.fillStyle = `color`;
+  ctx.fillStyle = `${color}`;
   ctx.fill();
 
-/*  if(end >= 1) {
-    drawIt(x, y, scale / 3, end - 1);
-    drawIt(x + scale / 3 * 2, y, scale / 3, end - 1);
-    drawIt(x, y + hexaHeight / 3 * 4, scale / 3, end - 1);
-    drawIt(x - scale / 3, y + hexaHeight / 3 * 2, scale / 3, end - 1);
-    drawIt(x + scale / 3 * 2, y + hexaHeight / 3 * 4, scale / 3, end - 1);
-    drawIt(x + scale, y + hexaHeight / 3 * 2, scale / 3, end - 1);
-  } */
+  if(end >= 1) {
+    drawIt(x, y, scale / 3, end - 1, 'white');
+    //drawIt(x + scale / 3 * 2, y, scale / 3, end - 1);
+    drawIt(x, y + triHeight / 3 * (2 + 2 / 3), scale / 3, end - 1, 'white');
+    //drawIt(x - scale / 3, y + hexaHeight / 3 * 2, scale / 3, end - 1);
+    //drawIt(x + scale / 3 * 2, y + hexaHeight / 3 * 4, scale / 3, end - 1);
+    //drawIt(x + scale, y + hexaHeight / 3 * 2, scale / 3, end - 1); 
+  } 
 }
 
 drawIt(howBigTheCanvasIs / 2, 5, (howBigTheCanvasIs - 10) * Math.sqrt(3) / 2, repetition, 'black');
