@@ -7,7 +7,7 @@ const repetition: number = 5;
 
 function drawIt(x: number, y: number, scale: number, end: number): void {
   
-  let hexaHeight: number = scale + Math.sqrt(3) / 2;
+  let hexaHeight: number = scale * Math.sqrt(3) / 2;
 
   ctx.beginPath();
   ctx.moveTo(x, y);
