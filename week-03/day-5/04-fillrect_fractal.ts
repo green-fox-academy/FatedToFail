@@ -11,7 +11,9 @@ function drawIt(x: number, y: number, s: number, counter: number) {
   if (counter > 1) {
     for(let i: number = -1; i < 2; i++) {
       for(let j: number = -1; j < 2; j++) {
-        drawIt(x + s / 3 + s * i, y + s / 3 + s * j, s / 3, counter - 1);
+        if ([i, j] !== [0, 0]) {
+          drawIt(x + s / 3 + s * i, y + s / 3 + s * j, s / 3, counter - 1);
+        }
       }
     }
   }
