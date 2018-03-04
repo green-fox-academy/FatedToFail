@@ -20,7 +20,9 @@ function drawIt(x: number, y: number, scale: number, end: number): void {
   ctx.stroke();
 
   if(end >= 1) {
-
+    drawIt(x, y, scale / 3, end - 1);
+    drawIt(x + scale / 3 * 2, y, scale / 3, end - 1);
+    drawIt(x, y + hexaHeight / 3 * 4, scale / 3, end - 1);
   }
 }
 
