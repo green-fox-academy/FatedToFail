@@ -29,4 +29,4 @@ function drawIt(x: number, y: number, scale: number, end: number): void {
   }
 }
 
-drawIt(howBigTheCanvasIs / 4, 0, howBigTheCanvasIs / 2, repetition);
+drawIt(howBigTheCanvasIs / 4, (howBigTheCanvasIs - howBigTheCanvasIs * Math.sqrt(3) / 2) / 2, howBigTheCanvasIs / 2, repetition);
