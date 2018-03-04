@@ -2,31 +2,18 @@
 
 const canvas = document.querySelector('.main-canvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
-const howBigTheCanvasIs: number = canvas.height < canvas.width ? canvas.height : canvas.width;
-const repetition: number = 5;
+const hbs: number = canvas.height < canvas.width ? canvas.height : canvas.width; 
+const max: any = Math.random() * 3 + 6;//parseInt(prompt('Please set the number of lines (in Number): '));
+const scale: number = hbs / 3;
 
-function drawIt(x: number, y: number, scale: number, end: number): void {
-  
-  let hexaHeight: number = scale * Math.sqrt(3) / 2;
-
-  ctx.beginPath();
-  ctx.moveTo(x, y);
-  ctx.lineTo(x + scale, y);
-  ctx.lineTo(x + scale + scale / 2, y + hexaHeight);
-  ctx.lineTo(x + scale, y + hexaHeight * 2);
-  ctx.lineTo(x, y + hexaHeight * 2);
-  ctx.lineTo(x - scale / 2, y + hexaHeight);
-  ctx.lineTo(x, y);
-  ctx.stroke();
-
-  if(end >= 1) {
-    drawIt(x, y, scale / 3, end - 1);
-    drawIt(x + scale / 3 * 2, y, scale / 3, end - 1);
-    drawIt(x, y + hexaHeight / 3 * 4, scale / 3, end - 1);
-    drawIt(x - scale / 3, y + hexaHeight / 3 * 2, scale / 3, end - 1);
-    drawIt(x + scale / 3 * 2, y + hexaHeight / 3 * 4, scale / 3, end - 1);
-    drawIt(x + scale, y + hexaHeight / 3 * 2, scale / 3, end - 1);
+function drawIt(x: number, y: number, s: number, counter: number) {
+  ctx.fillRect(x, y, s, s);
+  if (counter > 1) {
+    for(let i: number = -1; i < 2; i++) {
+      for(let j: number = -1; j < 2; j++) {
+        drawIt(x + s / 3 + s * i, y + s / 3 + s * j, s / 3, counter - 1);
+      }
+    }
   }
 }
-
-drawIt(howBigTheCanvasIs / 4, (howBigTheCanvasIs - howBigTheCanvasIs * Math.sqrt(3) / 2) / 2, howBigTheCanvasIs / 2, repetition);
+drawIt(scale, scale, scale, 5);
