@@ -26,13 +26,14 @@ function drawIt(x: number, y: number, scale: number, end: number, color: string)
   ctx.fill();
 
   if(end >= 1) {
-    drawIt(x, y, scale / 3, end - 1, 'white');
-    drawIt(x + scale / 3, y + triHeight / 9 * 2, scale / 3, end - 1, 'white');
-    drawIt(x, y + triHeight / 3 * (2 + 2 / 3), scale / 3, end - 1, 'white');
-    drawIt(x - scale / 3, y + triHeight / 9 * 2, scale / 3, end - 1, 'white');
-    drawIt(x + scale / 3, y + triHeight / 3 * 2, scale / 3, end - 1, 'white');
-    drawIt(x - scale / 3, y + triHeight / 3 * 2, scale / 3, end - 1, 'white');
+    drawIt(x, y, scale / 3, end - 1, color);
+    drawIt(x + scale / 3, y + triHeight / 9 * 2, scale / 3, end - 1, color);
+    drawIt(x, y + triHeight / 3 * (2 + 2 / 3), scale / 3, end - 1, color);
+    drawIt(x - scale / 3, y + triHeight / 9 * 2, scale / 3, end - 1, color);
+    drawIt(x + scale / 3, y + triHeight / 3 * 2, scale / 3, end - 1, color);
+    drawIt(x - scale / 3, y + triHeight / 3 * 2, scale / 3, end - 1, color);
   } 
 }
 
-drawIt(howBigTheCanvasIs / 2, 5, (howBigTheCanvasIs - 10) * Math.sqrt(3) / 2, repetition, 'black');
+drawIt(howBigTheCanvasIs / 2, 2, (howBigTheCanvasIs - 4) * Math.sqrt(3) / 2, repetition, 'black');
+drawIt(howBigTheCanvasIs / 2, 5, (howBigTheCanvasIs - 10) * Math.sqrt(3) / 2, repetition, 'white');
