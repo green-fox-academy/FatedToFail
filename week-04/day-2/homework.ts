@@ -55,7 +55,7 @@ class Student {
   }
 
   getGoal() {
-    console.log('Be a junior software developer.');
+    console.log('My goal is: Be a junior software developer.');
   }
 
   skipDays(numberOfDay: number) {
@@ -90,7 +90,7 @@ class Mentor {
   }
 
   getGoal() {
-    console.log('Educate brilliant junior software developers.');
+    console.log('My goal is: Educate brilliant junior software developers.');
   }
 }
 
@@ -122,7 +122,7 @@ class Sponsor {
   }
 
   getGoal() {
-    console.log('Hire brilliant junior software developers.');
+    console.log('My goal is: Hire brilliant junior software developers.');
   }
 
   hire() {
