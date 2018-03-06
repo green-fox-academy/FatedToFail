@@ -2,20 +2,15 @@
 
 class Person {
 
-  name: string = 'Jane Doe';
-  age: number = 30;
-  gender: string = 'female';
+  name: string;
+  age: number;
+  gender: string;
 
-  constructor(name?: string, age?: number, gender?: string) {
-    if (name !== undefined) {
-      this.name = name;
-    }
-    if (age !== undefined) {
-      this.age = age;
-    }
-    if (gender !== undefined) {
+  constructor(name: string = 'Jane Doe', age: number = 30, gender: string = 'female') {
+    this.name = name;
+    this.age = age;
     this.gender = gender;
-    }
+
   }
 
   introduce () {
@@ -29,17 +24,15 @@ class Person {
 
 class Student extends Person {
 
-  name: string = 'Jane Doe';
-  age: number = 30;
-  gender: string = 'female';
-  previousOrganization: string = 'The School of Life';
+  name: string;
+  age: number;
+  gender: string;
+  previousOrganization: string;
   skippedDays: number = 0;
 
-  constructor(name?: string, age?: number, gender?: string, previousOrganization?: string) {
+  constructor(name?: string, age?: number, gender?: string, previousOrganization: string = 'The School of Life') {
     super(name, age, gender);
-    if (previousOrganization !== undefined) {
-      this.previousOrganization = previousOrganization;
-    }
+    this.previousOrganization = previousOrganization;
   }
 
   introduce () {
@@ -57,16 +50,14 @@ class Student extends Person {
 
 class Mentor extends Person{
 
-  name: string = 'Jane Doe';
-  age: number = 30;
-  gender: string = 'female';
-  level: string = 'intermediate';
+  name: string;
+  age: number;
+  gender: string;
+  level: string;
 
-  constructor(name?: string, age?: number, gender?: string, level?: string) {
+  constructor(name?: string, age?: number, gender?: string, level: string = 'intermediate') {
     super(name, age, gender);
-    if (level !== undefined) {
-      this.level = level;
-    }
+    this.level = level;
   }
 
   introduce () {
@@ -80,17 +71,15 @@ class Mentor extends Person{
 
 class Sponsor extends Person {
 
-  name: string = 'Jane Doe';
-  age: number = 30;
-  gender: string = 'female';
-  company: string = 'Google';
+  name: string;
+  age: number;
+  gender: string;
+  company: string;
   hiredStudents: number = 0;
 
-  constructor(name?: string, age?: number, gender?: string, company?: string) {
+  constructor(name?: string, age?: number, gender?: string, company: string = 'Google') {
     super(name, age, gender);
-    if (company !== undefined) {
-      this.company = company;
-    }
+    this.company = company;
   }
 
   introduce () {
