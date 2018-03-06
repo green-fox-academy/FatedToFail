@@ -95,6 +95,28 @@ class Sponsor extends Person {
   }
 }
 
+class Cohort {
+  name:string;
+  students: Student[] = [];
+  mentors: Mentor[] = [];
+
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  addStudent(student: Student) {
+    this.students.push(student);
+  }
+
+  addMentor(mentor: Mentor) {
+    this.mentors.push(mentor);
+  }
+
+  info() {
+    console.log(`The ${this.name} cohort has ${this.students.length} students and ${this.mentors.length} mentors.`)
+  }
+}
+
 let people = [];
 let mark = new Person('Mark', 46, 'male');
 people.push(mark);
@@ -127,3 +149,10 @@ for (let person of people) {
   person.introduce();
   person.getGoal();
 }
+
+let awesome = new Cohort('AWESOME');
+awesome.addStudent(student);
+awesome.addStudent(john);
+awesome.addMentor(mentor);
+awesome.addMentor(gandhi);
+awesome.info();
