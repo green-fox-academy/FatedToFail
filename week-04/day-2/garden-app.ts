@@ -11,13 +11,12 @@ class Garden {
   gardenStatus(): string {
     let outPut: string = '';
     this.plants.forEach(e => {
-      outPut += `The ${e.name} ${e.type} ${e.waterStatus() ? 'needs' : 'doesnt needs'} water \n\r` 
+      outPut += `The ${e.name} ${e.type} ${e.waterStatus() ? 'needs' : 'doesnt need'} water \n\r` 
     });
     return outPut;
   }
 
   waterMyGarden(amount: number): string {
-    let myPlants: Plants[] = [];
     this.plants.filter(e => e.waterStatus()).forEach((e, i, a) => {
       e.waterIt(amount / a.length);
     });
