@@ -24,9 +24,6 @@ class Person {
 
 class Student extends Person {
 
-  name: string;
-  age: number;
-  gender: string;
   previousOrganization: string;
   skippedDays: number = 0;
 
@@ -50,9 +47,6 @@ class Student extends Person {
 
 class Mentor extends Person{
 
-  name: string;
-  age: number;
-  gender: string;
   level: string;
 
   constructor(name?: string, age?: number, gender?: string, level: string = 'intermediate') {
@@ -71,9 +65,6 @@ class Mentor extends Person{
 
 class Sponsor extends Person {
 
-  name: string;
-  age: number;
-  gender: string;
   company: string;
   hiredStudents: number = 0;
 
