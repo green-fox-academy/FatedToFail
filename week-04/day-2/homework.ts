@@ -27,7 +27,7 @@ class Person {
   }
 }
 
-class Student {
+class Student extends Person {
 
   name: string = 'Jane Doe';
   age: number = 30;
@@ -36,15 +36,7 @@ class Student {
   skippedDays: number = 0;
 
   constructor(name?: string, age?: number, gender?: string, previousOrganization?: string) {
-    if (name !== undefined) {
-      this.name = name;
-    }
-    if (age !== undefined) {
-      this.age = age;
-    }
-    if (gender !== undefined) {
-    this.gender = gender;
-    }
+    super(name, age, gender);
     if (previousOrganization !== undefined) {
       this.previousOrganization = previousOrganization;
     }
@@ -63,7 +55,7 @@ class Student {
   }
 }
 
-class Mentor {
+class Mentor extends Person{
 
   name: string = 'Jane Doe';
   age: number = 30;
@@ -71,15 +63,7 @@ class Mentor {
   level: string = 'intermediate';
 
   constructor(name?: string, age?: number, gender?: string, level?: string) {
-    if (name !== undefined) {
-      this.name = name;
-    }
-    if (age !== undefined) {
-      this.age = age;
-    }
-    if (gender !== undefined) {
-    this.gender = gender;
-    }
+    super(name, age, gender);
     if (level !== undefined) {
       this.level = level;
     }
@@ -94,7 +78,7 @@ class Mentor {
   }
 }
 
-class Sponsor {
+class Sponsor extends Person {
 
   name: string = 'Jane Doe';
   age: number = 30;
@@ -103,15 +87,7 @@ class Sponsor {
   hiredStudents: number = 0;
 
   constructor(name?: string, age?: number, gender?: string, company?: string) {
-    if (name !== undefined) {
-      this.name = name;
-    }
-    if (age !== undefined) {
-      this.age = age;
-    }
-    if (gender !== undefined) {
-    this.gender = gender;
-    }
+    super(name, age, gender);
     if (company !== undefined) {
       this.company = company;
     }
