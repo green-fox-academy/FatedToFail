@@ -48,7 +48,11 @@ console.log(dominoes.sort(function (a: Domino , b: Domino): number {
   }
 
   compareTo(thing: Thing): number {
-    return this.completed === thing.completed ? [this.name, thing.name].sort().indexOf(this.name) - 0.5 : this.completed ? -1 : 1;
+    return this.completed === thing.completed
+      ? [this.name, thing.name].sort().indexOf(this.name) - 0.5 
+      : this.completed 
+        ? -1 
+        : 1;
   }
 }
 
