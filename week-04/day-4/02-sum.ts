@@ -1,18 +1,17 @@
 'use strict';
 
 export class Dunno {
-  sumEmAll(tempArr: any[]): number {
+  sumEmAll(tempArr: number[]): number {
     let sum: number = 0;
     try {
-      tempArr.forEach(e => {
-        if (isNaN(e)) {
-          sum += 0;
-        } else { 
-          sum += e;
-        }
+      tempArr.forEach((e, i) => {
+        Number.isInteger(e)
+          ? sum += e
+          : console.log(`\r\nError: ${e}, on index: ${i}, is not a number!`); 
       });
       return sum;
     } catch {
+      console.log(`\r\nError: the input: ${tempArr}, is not an array!`);
       return sum;
     }
   }
