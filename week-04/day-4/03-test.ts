@@ -12,4 +12,4 @@ test('check 2 input if they\'re anagrams?', t => {
   t.equal(anagramChecker(undefined, null), false);
   t.equal(anagramChecker(undefined, NaN), false);
   t.end();
-})
+});
