@@ -9,4 +9,3 @@ function countLetters(tempStr: string): object {
   });
   return tempObj;
 }
-
