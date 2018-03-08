@@ -9,5 +9,6 @@ test('adding a number of array', t => {
   t.equal(new Dunno().sumEmAll([1]), 1);
   t.equal(new Dunno().sumEmAll([null]), 0);
   t.equal(new Dunno().sumEmAll(['sdf']), 0);
+  t.equal(new Dunno().sumEmAll(null), 0);
   t.end();
 });
