@@ -1,3 +1,4 @@
+'use strict';
 import { test } from 'tape';
 import { Dunno } from './02-sum';
 
