@@ -22,8 +22,16 @@ let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame',
 
 let myData: any[] = fs.readFileSync('./gameData/myCarrier.txt', 'utf-8').split(';');
 let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6]}.txt`, 'utf-8').split(';');
+let reset: string[] = ['', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;2', '1500,1;F16_F16_F35_F35;2', '2000,1;F16_F16_F35_F35;2', '2000,1;F16_F16_F35;3', '2500,0.8;F16_F16_F35_F35;3'];
 
-if(parseInt(myData[0].split(',')[0]) <= 0 || parseInt(myData[5]) === 0) {
+if (process.argv[2] === '-newGame') {
+  for(let i: number = 0; i < 11; i++) {
+    i = 0
+      ? fs.writFyleSync('./gameData/myCarrier.txt', '5000,1;;1;1;6;10000;1')
+      : fs.writFyleSync(`./gameData/enemy${i}.txt`, reset[i])
+  }
+  console.log('\r\nThe game has been reset.\r\nPlease enjoy! :)');
+} else if(parseInt(myData[0].split(',')[0]) <= 0 || parseInt(myData[5]) === 0) {
   console.log('\r\nYou have lost the game!\r\nPlease type /ts-node game -newGame/ to restart')
 } else if (myData[6] == 11) {
   console.log('\r\nYou have \\O/ WON \\O/ the game!\r\nPlease type /ts-node game -newGame/ to restart')
@@ -123,6 +131,4 @@ if (check.indexOf(process.argv[2]) === -1) {
   console.log(`\r\nYou just typed a command that is not exist: ${process.argv[2]}\r\nCheck out /ts-node game/ to get the correct commands`)
 }
 
-// if (process.argv[2] === '-newGame') {
-//   console.log('Fight method')
-// }
+
