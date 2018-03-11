@@ -15,7 +15,7 @@ export default abstract class Aircraft {
   abstract howToFight(): number;
 
   getDestroyed(): number {
-    console.log(`${this.type} got destroyed in the fight`);
+    console.log(`${this.type} got DESTROYED in the fight`);
     this.isAlive = false;
     return 0;
   }

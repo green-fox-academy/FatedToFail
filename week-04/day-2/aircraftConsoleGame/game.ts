@@ -14,6 +14,7 @@ import { upgHangar } from "./gameFunctions/upgHangar";
 import { buyF16 } from "./gameFunctions/buyF16";
 import { buyF35 } from "./gameFunctions/buyF35";
 import { repair } from "./gameFunctions/repair";
+import { status } from "./gameFunctions/status";
 
 'use strict';
 const fs = require('fs');
@@ -102,9 +103,9 @@ if (check.indexOf(process.argv[2]) === -1) {
       : upgF35(money, tempMoney, myData);
   }
 
-  // if (process.argv[2] === '-status') {
-  //   console.log('Fight method')
-  // }
+  if (process.argv[2] === '-status') {
+    status(money, myCarrier, myData, enemyCarrier, enemyData);
+  }
 
   if (process.argv[2] === '-upgHangar') {
     myData[4] == 10

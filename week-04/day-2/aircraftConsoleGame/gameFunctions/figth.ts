@@ -13,7 +13,7 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   let dmgToMe: number = enemyCarrier.fight(myCarrier);
   
   console.log(`\r\nYou dealt: ${dmgToEnemy} damage to the enemy Carrier.\r\nIt has ${enemyCarrier.health} health left\r\n`);
-  console.log(`The enemy dealt: ${dmgToMe} damage to your Carrier.\r\nIt has ${myCarrier.health} health left\r\n`);
+  console.log(`The enemy dealt: ${dmgToMe} damage to your Carrier.\r\nYou have ${myCarrier.health} health left\r\n`);
 
   enemyCarrier.health <= 0
     ? myData[2] === 10
