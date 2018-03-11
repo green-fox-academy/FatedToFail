@@ -1,4 +1,5 @@
 import Carrier from "./Classes/Carrier";
+import Aircraft from "./Classes/Aircraft";
 import F16 from "./Classes/F16";
 import F16lvl1 from "./Classes/F16lvl1";
 import F35lvl1 from "./Classes/F35lvl1";
@@ -7,10 +8,10 @@ import F35lvl2 from "./Classes/F35lvl2";
 import F16lvl3 from "./Classes/F16lvl3";
 import F35lvl3 from "./Classes/F35lvl3";
 import { fight } from "./gameFunctions/figth";
-import Aircraft from "./Classes/Aircraft";
 import { upgShield } from "./gameFunctions/upgShield";
 import { upgF16 } from "./gameFunctions/upgF16";
 import { upgF35 } from "./gameFunctions/upgF35";
+import { upgHangar } from "./gameFunctions/upgHangar";
 
 'use strict';
 const fs = require('fs');
@@ -84,12 +85,14 @@ if (process.argv[2] === '-upgF35') {
   myData[3] == 3
     ? console.log('\r\nYou cannot further upgrade your F35 figthers (It\'s already maxed out)')
     : upgF35(money, tempMoney, myData);
-
+}
 if (process.argv[2] === '-status') {
   console.log('Fight method')
 }
 if (process.argv[2] === '-upgHangar') {
-  console.log('Fight method')
+  myData[4] == 10
+  ? console.log('\r\nYou cannot further upgrade your Hangar (It\'s already maxed out)')
+  : upgHangar(money, tempMoney, myData);
 }
 if (process.argv[2] === '-buyF16') {
   console.log('Fight method')
