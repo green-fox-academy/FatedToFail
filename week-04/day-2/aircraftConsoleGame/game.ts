@@ -12,6 +12,7 @@ import { upgShield } from "./gameFunctions/upgShield";
 import { upgF16 } from "./gameFunctions/upgF16";
 import { upgF35 } from "./gameFunctions/upgF35";
 import { upgHangar } from "./gameFunctions/upgHangar";
+import { buyF16 } from "./gameFunctions/buyF16";
 
 'use strict';
 const fs = require('fs');
@@ -76,41 +77,47 @@ if (process.argv[2] === '-upgShield') {
     ? console.log('\r\nYou cannot further upgrade your shield (It\'s already maxed out)')
     : upgShield(money, tempMoney, myData);
 }
+
 if (process.argv[2] === '-upgF16') {
   myData[2] == 3
     ? console.log('\r\nYou cannot further upgrade your F16 figthers (It\'s already maxed out)')
     : upgF16(money, tempMoney, myData);
 }
+
 if (process.argv[2] === '-upgF35') {
   myData[3] == 3
     ? console.log('\r\nYou cannot further upgrade your F35 figthers (It\'s already maxed out)')
     : upgF35(money, tempMoney, myData);
 }
-if (process.argv[2] === '-status') {
-  console.log('Fight method')
-}
+
+// if (process.argv[2] === '-status') {
+//   console.log('Fight method')
+// }
+
 if (process.argv[2] === '-upgHangar') {
   myData[4] == 10
   ? console.log('\r\nYou cannot further upgrade your Hangar (It\'s already maxed out)')
   : upgHangar(money, tempMoney, myData);
 }
+
 if (process.argv[2] === '-buyF16') {
-  console.log('Fight method')
-}
-if (process.argv[2] === '-buyF35') {
-  console.log('Fight method')
-}
-if (process.argv[2] === '-repair') {
-  console.log('Fight method')
-}
-if (check.indexOf(process.argv[2]) === -1) {
-  console.log('wrong method')
+  myData[4] == myData[1].split('_').length
+    ? console.log('\r\nYou cannot buy more Aircraft, becaouse your Hangar is full!\r\nUpgrade it / Sell an Aircraft / Or lose one in fight')
+    : buyF16(money, tempMoney, myData);
 }
 
-//fs.writeFileSync('./gameData/myCarrier.txt', )
+// if (process.argv[2] === '-buyF35') {
+//   console.log('Fight method')
+// }
 
-if (process.argv[2] === '-newGame') {
-  console.log('Fight method')
-}
+// if (process.argv[2] === '-repair') {
+//   console.log('Fight method')
+// }
 
+// if (check.indexOf(process.argv[2]) === -1) {
+//   console.log('wrong method')
+// }
 
+// if (process.argv[2] === '-newGame') {
+//   console.log('Fight method')
+// }
