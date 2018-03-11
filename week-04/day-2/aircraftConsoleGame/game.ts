@@ -51,9 +51,9 @@ myData[1].split('_').forEach(e => {
         ? myCarrier.add(new F16lvl2(e.split(',')[1]))
         : myCarrier.add(new F16lvl3(e.split(',')[1]))
     : e.split(',')[0] === 'F35'
-      ? myData[2] === 1
+      ? myData[3] === 1
         ? myCarrier.add(new F35lvl1(e.split(',')[1]))
-        : myData[2] === 2
+        : myData[3] === 2
           ? myCarrier.add(new F35lvl2(e.split(',')[1]))
           : myCarrier.add(new F35lvl3(e.split(',')[1]))
       : '';
@@ -75,7 +75,7 @@ if (process.argv[2] === '-upgShield') {
     : upgShield(money, tempMoney, myData);
 }
 if (process.argv[2] === '-upgF16') {
-  myData[3] == 3
+  myData[2] == 3
     ? console.log('\r\nYou cannot further upgrade your F16 figthers (It\'s already maxed out)')
     : upgF16(money, tempMoney, myData);
 }
