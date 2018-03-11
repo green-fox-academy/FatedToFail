@@ -4,9 +4,7 @@ const fs = require('fs');
 
 export function upgHangar(money: number, tempMoney: number, myData: any[]) {
   
-  const cost: number = myData[4] == 6
-    ? 1000
-    : 1500;
+  const cost: number = 1000;
   
   myData[4] == 6
     ? myData[4] = 8
@@ -14,7 +12,9 @@ export function upgHangar(money: number, tempMoney: number, myData: any[]) {
 
   money -= cost;
 
-  console.log(`\r\nYou just spent ${tempMoney - money}$ to upgrade your Hangar to have ${myData[4]} space`)
+  myData[5] = money;
+
+  console.log(`\r\nYou just spent ${tempMoney - money}$ to upgrade your Hangar to have ${myData[4]} space`);
   
-  fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'))
+  fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
 }
