@@ -15,20 +15,24 @@ export default abstract class Aircraft {
   abstract howToFight(): number;
 
   getDestroyed(): number {
+    console.log(`${this.type} got destroyed in the fight`);
     this.isAlive = false;
     return 0;
   }
 
   stuckedAmmo(): number {
+    console.log(`${this.type} had trouble. <Error: StuckedAmmoClip>`);
     return 0;
   }
 
   miss(): number {
+    console.log(`${this.type} missed the target`);
     this.emptyAmmo();
     return 0;
   }
 
   fight(): number {
+    console.log(`${this.type} dealt ${this.baseDmg * this.currentAmmo} damage`);
     return this.baseDmg * this.emptyAmmo();
   }
 

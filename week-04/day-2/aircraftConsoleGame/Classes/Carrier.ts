@@ -13,9 +13,9 @@ export default class Carrier {
   health: number;
   shield: number;
 
-  constructor (health: number, shield: number) {
-    this.health = health;
-    this.shield = shield;
+  constructor (healthAndShield: number[]) {
+    this.health = healthAndShield[0];
+    this.shield = healthAndShield[1];
   }
 
   getDamage(damage: number): number {
@@ -44,11 +44,13 @@ export default class Carrier {
   }
 
   fight(enemy: Carrier): number {
-    return this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c);
+    let tempDamage: number = this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c * this.shield);
+    enemy.health -= tempDamage;
+    return tempDamage;
   }
 
   getStatus() {
-    return `HP: ${this.health}, F35 count: ${this.aircrafts.filter(e => e.isPriority()).length}, F16 count: ${this.aircrafts.filter(e => !e.isPriority()).length}, Ammo: ${this.storedAmmo}`;
+    return `HP: ${this.health}, F35 count: ${this.aircrafts.filter(e => e.isPriority()).length}, F16 count: ${this.aircrafts.filter(e => !e.isPriority()).length}`;
   }
 }
 
