@@ -18,7 +18,7 @@ process.argv.forEach(e => {
 let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame', '-status', '-upgHangar', '-buyF16', '-buyF35', '-repair', undefined];
 
 let myData: any[] = fs.readFileSync('./gameData/myCarrier.txt', 'utf-8').split(';');
-let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6]}.txt`, 'utf-8').split(';');
+let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6].split('\r\n')[0]}.txt`, 'utf-8').split(';');
 
 let myCarrier: Carrier = new Carrier(myData[0].split(','));
 let enemyCarrier: Carrier = new Carrier(enemyData[0].split(','));
