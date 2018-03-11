@@ -1,3 +1,4 @@
+'use strict';
 import Carrier from "./Classes/Carrier";
 import Aircraft from "./Classes/Aircraft";
 import F16lvl1 from "./Classes/F16lvl1";
@@ -16,8 +17,8 @@ import { buyF35 } from "./gameFunctions/buyF35";
 import { repair } from "./gameFunctions/repair";
 import { status } from "./gameFunctions/status";
 import { upgrades } from "./gameFunctions/upgrades";
+import { hello } from "./gameFunctions/hello";
 
-'use strict';
 const fs = require('fs');
 
 let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame', '-status', '-upgHangar', '-buyF16', '-buyF35', '-repair', '-upgrades', undefined];
@@ -77,7 +78,7 @@ if (check.indexOf(process.argv[2]) === -1) {
   });
 
   if (process.argv[2] === undefined) {
-    console.log('Game description')
+    hello();
   }
 
   if (process.argv[2] === '-fight') {
