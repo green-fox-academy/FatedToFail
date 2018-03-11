@@ -8,6 +8,7 @@ import F16lvl3 from "./Classes/F16lvl3";
 import F35lvl3 from "./Classes/F35lvl3";
 import { fight } from "./gameFunctions/figth";
 import Aircraft from "./Classes/Aircraft";
+import { upgShield } from "./gameFunctions/upgShiled";
 
 'use strict';
 const fs = require('fs');
@@ -66,8 +67,11 @@ if (process.argv[2] === '-fight') {
     ? console.log('\r\nYou have no Aircraft, so you cannot go into a fight')
     : fight(money, tempMoney, enemyCarrier, myCarrier, myData, enemyData);
 }
+
 if (process.argv[2] === '-upgShield') {
-  console.log('Shield upgraded method')
+  myCarrier.shield === 0.5
+    ? console.log('\r\nYou cannot further upgrade your shield (It\'s already maxed out')
+    : upgShield(money, tempMoney, myData);
 }
 if (process.argv[2] === '-upgF16') {
   console.log('Fight method')
