@@ -10,11 +10,20 @@ import F35lvl3 from './F35lvl3';
 export default class Carrier {
   
   aircrafts: Aircraft[] = [];
-  storedAmmo: number;
   health: number;
+  shield: number;
 
-  constructor () {
+  constructor (health: number, shield: number) {
+    this.health = health;
+    this.shield = shield;
+  }
 
+  getDamage(damage: number): number {
+    return this.shield * damage;
+  }
+
+  takeDmg(damage: number) {
+    this.health -= this.getDamage(damage);
   }
 
   add(aircraft: Aircraft) {
@@ -29,15 +38,13 @@ export default class Carrier {
           : 1
         : -1
     }).forEach(e => {
-      amount = e.refill(this.storedAmmo);
+      amount = e.refill(amount);
     });
     return amount;
   }
 
-  fight(enemy: Carrier) {
-    this.aircrafts.forEach(e => {
-      enemy.health -= e.fight();
-    })
+  fight(enemy: Carrier): number {
+    return this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c);
   }
 
   getStatus() {

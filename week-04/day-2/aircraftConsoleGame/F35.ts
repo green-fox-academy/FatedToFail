@@ -5,8 +5,9 @@ export default abstract class F35 extends Aircraft {
  
   constructor(ammo: number) {
     super(ammo);
-    this.baseDmg = 50;
+    this.baseDmg = 25;
     this.type = 'F35'
+    this.maxAmmo = 14;
   }
 
   isPriority(): boolean {

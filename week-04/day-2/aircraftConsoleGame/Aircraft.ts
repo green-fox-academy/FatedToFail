@@ -6,6 +6,7 @@ export default abstract class Aircraft {
   baseDmg: number;
   type: string;
   currentAmmo: number = 0;
+  isAlive: boolean = true;
 
   constructor (ammo: number) {
     this.currentAmmo = ammo;
@@ -14,7 +15,8 @@ export default abstract class Aircraft {
   abstract howToFight(): number;
 
   getDestroyed(): number {
-    return -1;
+    this.isAlive = false;
+    return 0;
   }
 
   stuckedAmmo(): number {
