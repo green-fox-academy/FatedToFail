@@ -26,9 +26,9 @@ let reset: string[] = ['', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500
 
 if (process.argv[2] === '-newGame') {
   for(let i: number = 0; i < 11; i++) {
-    i = 0
-      ? fs.writFyleSync('./gameData/myCarrier.txt', '5000,1;;1;1;6;10000;1')
-      : fs.writFyleSync(`./gameData/enemy${i}.txt`, reset[i])
+    i == 0
+      ? fs.writeFileSync('./gameData/myCarrier.txt', '5000,1;;1;1;6;10000;1')
+      : fs.writeFileSync(`./gameData/enemy${i}.txt`, reset[i]);
   }
   console.log('\r\nThe game has been reset.\r\nPlease enjoy! :)');
 } else if(parseInt(myData[0].split(',')[0]) <= 0 || parseInt(myData[5]) === 0) {
