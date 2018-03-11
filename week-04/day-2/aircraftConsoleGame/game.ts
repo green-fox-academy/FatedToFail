@@ -14,6 +14,7 @@ import { upgF35 } from "./gameFunctions/upgF35";
 import { upgHangar } from "./gameFunctions/upgHangar";
 import { buyF16 } from "./gameFunctions/buyF16";
 import { buyF35 } from "./gameFunctions/buyF35";
+import { repair } from "./gameFunctions/repair";
 
 'use strict';
 const fs = require('fs');
@@ -113,9 +114,9 @@ if (process.argv[2] === '-buyF35') {
     : buyF35(money, tempMoney, myData);
 }
 
-// if (process.argv[2] === '-repair') {
-//   console.log('Fight method')
-// }
+if (process.argv[2] === '-repair') {
+  repair(money, tempMoney, myData);
+}
 
 // if (check.indexOf(process.argv[2]) === -1) {
 //   console.log('wrong method')
