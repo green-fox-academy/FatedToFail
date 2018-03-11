@@ -10,6 +10,7 @@ import { fight } from "./gameFunctions/figth";
 import Aircraft from "./Classes/Aircraft";
 import { upgShield } from "./gameFunctions/upgShield";
 import { upgF16 } from "./gameFunctions/upgF16";
+import { upgF35 } from "./gameFunctions/upgF35";
 
 'use strict';
 const fs = require('fs');
@@ -80,8 +81,10 @@ if (process.argv[2] === '-upgF16') {
     : upgF16(money, tempMoney, myData);
 }
 if (process.argv[2] === '-upgF35') {
-  console.log('Fight method')
-}
+  myData[3] == 3
+    ? console.log('\r\nYou cannot further upgrade your F35 figthers (It\'s already maxed out)')
+    : upgF35(money, tempMoney, myData);
+
 if (process.argv[2] === '-status') {
   console.log('Fight method')
 }
