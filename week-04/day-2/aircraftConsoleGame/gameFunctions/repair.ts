@@ -9,7 +9,7 @@ export function repair(money: number, tempMoney: number, myData: any[]) {
 
   maxHP - tempHP < money
     ? myData[0] = `5000,${myData[0].split(',')[1]}`
-    : console.log('\r\nYou would spend all your money and woudn\'t able to fight')
+    : console.log('\r\nYou would spend all your money and woudn\'t be able to fight')
 
   money -= maxHP - tempHP;
 
