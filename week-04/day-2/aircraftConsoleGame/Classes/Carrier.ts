@@ -19,7 +19,7 @@ export default class Carrier {
   }
 
   getDamage(damage: number): number {
-    return this.shield * damage;
+    return Math.floor(this.shield * damage + 0.99);
   }
 
   takeDmg(damage: number) {
@@ -44,9 +44,9 @@ export default class Carrier {
   }
 
   fight(enemy: Carrier): number {
-    let tempDamage: number = Math.floor(this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c * this.shield) + 0.99);
-    enemy.health -= tempDamage;
-    return tempDamage;
+    let tempDamage: number = this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c);
+    enemy.takeDmg(tempDamage);
+    return tempDamage * enemy.shield;
   }
 
   getStatus() {
