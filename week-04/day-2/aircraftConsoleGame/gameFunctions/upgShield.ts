@@ -1,6 +1,5 @@
 'use stirct';
 
-import Carrier from "../Classes/Carrier";
 const fs = require('fs');
 
 export function upgShield(money: number, tempMoney: number, myData: any[]) {
