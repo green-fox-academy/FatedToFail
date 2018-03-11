@@ -6,7 +6,7 @@ export default class F16lvl2 extends F16 {
     let outcome: number = Math.random()
     return outcome < 0.60
       ? this.fight()
-      : outcome < 0.84
+      : outcome < 0.79
         ? this.miss()
         : outcome < 0.94
           ? this.stuckedAmmo()

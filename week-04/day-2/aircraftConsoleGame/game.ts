@@ -8,18 +8,19 @@ import F16lvl3 from "./Classes/F16lvl3";
 import F35lvl3 from "./Classes/F35lvl3";
 import { fight } from "./gameFunctions/figth";
 import { upgShield } from "./gameFunctions/upgShield";
+import { upgHangar } from "./gameFunctions/upgHangar";
 import { upgF16 } from "./gameFunctions/upgF16";
 import { upgF35 } from "./gameFunctions/upgF35";
-import { upgHangar } from "./gameFunctions/upgHangar";
 import { buyF16 } from "./gameFunctions/buyF16";
 import { buyF35 } from "./gameFunctions/buyF35";
 import { repair } from "./gameFunctions/repair";
 import { status } from "./gameFunctions/status";
+import { upgrades } from "./gameFunctions/upgrades";
 
 'use strict';
 const fs = require('fs');
 
-let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame', '-status', '-upgHangar', '-buyF16', '-buyF35', '-repair', undefined];
+let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame', '-status', '-upgHangar', '-buyF16', '-buyF35', '-repair', '-upgrades', undefined];
 
 let myData: any[] = fs.readFileSync('./gameData/myCarrier.txt', 'utf-8').split(';');
 let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6]}.txt`, 'utf-8').split(';');
@@ -89,6 +90,10 @@ if (check.indexOf(process.argv[2]) === -1) {
     myCarrier.shield == 0.5
       ? console.log('\r\nYou cannot further upgrade your shield (It\'s already maxed out)')
       : upgShield(money, tempMoney, myData);
+  }
+
+  if (process.argv[2] === '-upgrades') {
+    upgrades(money, myCarrier, myData);
   }
 
   if (process.argv[2] === '-upgF16') {
