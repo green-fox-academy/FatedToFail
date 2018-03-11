@@ -24,7 +24,9 @@ let myData: any[] = fs.readFileSync('./gameData/myCarrier.txt', 'utf-8').split('
 let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6]}.txt`, 'utf-8').split(';');
 let reset: string[] = ['', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;2', '1500,1;F16_F16_F35_F35;2', '2000,1;F16_F16_F35_F35;2', '2000,1;F16_F16_F35;3', '2500,0.8;F16_F16_F35_F35;3'];
 
-if (process.argv[2] === '-newGame') {
+if (check.indexOf(process.argv[2]) === -1) {
+  console.log(`\r\nYou just typed a command that is not exist: ${process.argv[2]}\r\nCheck out /ts-node game/ to get the correct commands`)
+} else if (process.argv[2] === '-newGame') {
   for(let i: number = 0; i < 11; i++) {
     i == 0
       ? fs.writeFileSync('./gameData/myCarrier.txt', '5000,1;;1;1;6;10000;1')
@@ -126,9 +128,3 @@ if (process.argv[2] === '-newGame') {
     repair(money, tempMoney, myData);
   }
 }
-
-if (check.indexOf(process.argv[2]) === -1) {
-  console.log(`\r\nYou just typed a command that is not exist: ${process.argv[2]}\r\nCheck out /ts-node game/ to get the correct commands`)
-}
-
-
