@@ -17,5 +17,7 @@ export function repair(money: number, tempMoney: number, myData: any[]) {
 
   console.log(`\r\nYou just spent ${tempMoney - money}$ to repair your Carrier`)
   
-  fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'))
+  fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
+  
+  console.log(`\r\nYou have ${money}$ left!`);
 }

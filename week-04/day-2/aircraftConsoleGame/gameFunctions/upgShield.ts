@@ -18,4 +18,6 @@ export function upgShield(money: number, tempMoney: number, myData: any[]) {
   console.log(`\r\nYou just spent ${tempMoney - money}$ to upgrade your shield to ${myData[0].split(',')[1]}`);
 
   fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
+  
+  console.log(`\r\nYou have ${money}$ left!`);
 }

@@ -39,4 +39,6 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   }
 
   fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
+  
+  console.log(`\r\nYou have ${money}$ left!`);
 }

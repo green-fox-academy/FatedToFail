@@ -17,4 +17,6 @@ export function buyF35(money: number, tempMoney: number, myData: any[]) {
   console.log(`\r\nYou just spent ${tempMoney - money}$ to buy an F35 fighter`);
   
   fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
+  
+  console.log(`\r\nYou have ${money}$ left!`);
 }

@@ -17,4 +17,6 @@ export function upgF35(money: number, tempMoney: number, myData: any[]) {
   console.log(`\r\nYou just spent ${tempMoney - money}$ to upgrade your F35 fighters to level ${myData[3]}`);
   
   fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
+  
+  console.log(`\r\nYou have ${money}$ left!`);
 }
