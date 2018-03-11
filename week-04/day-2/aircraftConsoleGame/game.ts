@@ -6,7 +6,8 @@ import F16lvl2 from "./Classes/F16lvl2";
 import F35lvl2 from "./Classes/F35lvl2";
 import F16lvl3 from "./Classes/F16lvl3";
 import F35lvl3 from "./Classes/F35lvl3";
-import { fight } from "./gameData/figth";
+import { fight } from "./gameFunctions/figth";
+import Aircraft from "./Classes/Aircraft";
 
 'use strict';
 const fs = require('fs');
@@ -18,7 +19,7 @@ process.argv.forEach(e => {
 let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame', '-status', '-upgHangar', '-buyF16', '-buyF35', '-repair', undefined];
 
 let myData: any[] = fs.readFileSync('./gameData/myCarrier.txt', 'utf-8').split(';');
-let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6].split('\r\n')[0]}.txt`, 'utf-8').split(';');
+let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6]}.txt`, 'utf-8').split(';');
 
 let myCarrier: Carrier = new Carrier(myData[0].split(','));
 let enemyCarrier: Carrier = new Carrier(enemyData[0].split(','));
@@ -47,11 +48,13 @@ myData[1].split('_').forEach(e => {
       : myData[2] === 2
         ? myCarrier.add(new F16lvl2(e.split(',')[1]))
         : myCarrier.add(new F16lvl3(e.split(',')[1]))
-    : myData[2] === 1
-    ? myCarrier.add(new F35lvl1(e.split(',')[1]))
-    : myData[2] === 2
-      ? myCarrier.add(new F35lvl2(e.split(',')[1]))
-      : myCarrier.add(new F35lvl3(e.split(',')[1]));
+    : e.split(',')[0] === 'F35'
+      ? myData[2] === 1
+        ? myCarrier.add(new F35lvl1(e.split(',')[1]))
+        : myData[2] === 2
+          ? myCarrier.add(new F35lvl2(e.split(',')[1]))
+          : myCarrier.add(new F35lvl3(e.split(',')[1]))
+      : '';
 });
 
 if (process.argv[2] === undefined) {
@@ -59,7 +62,9 @@ if (process.argv[2] === undefined) {
 }
 
 if (process.argv[2] === '-fight') {
-  fight(money, tempMoney, enemyCarrier, myCarrier, myData, enemyData);
+  myCarrier.aircrafts.length === 0
+    ? console.log('\r\nYou have no Aircraft, so you cannot go into a fight')
+    : fight(money, tempMoney, enemyCarrier, myCarrier, myData, enemyData);
 }
 if (process.argv[2] === '-upgShield') {
   console.log('Shield upgraded method')

@@ -30,6 +30,10 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   myData[1] = myCarrier.aircrafts.map(e => `${e.type},${e.currentAmmo}`).join('_');
   enemyData[1] = enemyCarrier.aircrafts.map(e => `${e.type}`).join('_');
 
+  if (enemyCarrier.health <= 0) {
+    myData[6] = parseInt(myData[6]) + 1;
+  }
+
   fs.writeFileSync('./gameData/myCarrier.txt', myData.join(';'));
-  fs.writeFileSync(`./gameData/enemy${myData[6].split('\r\n')[0]}.txt`, enemyData.join(';'));
+  fs.writeFileSync(`./gameData/enemy${myData[6]}.txt`, enemyData.join(';'));
 }
