@@ -13,6 +13,7 @@ import { upgF16 } from "./gameFunctions/upgF16";
 import { upgF35 } from "./gameFunctions/upgF35";
 import { upgHangar } from "./gameFunctions/upgHangar";
 import { buyF16 } from "./gameFunctions/buyF16";
+import { buyF35 } from "./gameFunctions/buyF35";
 
 'use strict';
 const fs = require('fs');
@@ -106,9 +107,11 @@ if (process.argv[2] === '-buyF16') {
     : buyF16(money, tempMoney, myData);
 }
 
-// if (process.argv[2] === '-buyF35') {
-//   console.log('Fight method')
-// }
+if (process.argv[2] === '-buyF35') {
+  myData[4] == myData[1].split('_').length
+    ? console.log('\r\nYou cannot buy more Aircraft, becaouse your Hangar is full!\r\nUpgrade it / Sell an Aircraft / Or lose one in fight')
+    : buyF35(money, tempMoney, myData);
+}
 
 // if (process.argv[2] === '-repair') {
 //   console.log('Fight method')
