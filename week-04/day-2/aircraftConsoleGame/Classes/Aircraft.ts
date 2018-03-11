@@ -44,8 +44,8 @@ export default abstract class Aircraft {
 
   refill(ammo: number): number {
     if (this.maxAmmo - this.currentAmmo < ammo) {
-      this.currentAmmo = this.maxAmmo;
       ammo -= this.maxAmmo - this.currentAmmo;
+      this.currentAmmo = this.maxAmmo;
     } else {
       this.currentAmmo += ammo;
       ammo = 0;

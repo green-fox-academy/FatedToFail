@@ -44,7 +44,7 @@ export default class Carrier {
   }
 
   fight(enemy: Carrier): number {
-    let tempDamage: number = this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c * this.shield);
+    let tempDamage: number = Math.floor(this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c * this.shield) + 0.99);
     enemy.health -= tempDamage;
     return tempDamage;
   }
