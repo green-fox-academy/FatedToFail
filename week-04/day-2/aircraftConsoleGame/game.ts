@@ -121,13 +121,13 @@ if (check.indexOf(process.argv[2]) === -1) {
 
   if (process.argv[2] === '-buyF16') {
     myData[4] == myData[1].split('_').length
-      ? console.log('\r\nYou cannot buy more Aircraft, becaouse your Hangar is full!\r\nUpgrade it / Sell an Aircraft / Or lose one in fight')
+      ? console.log('\r\nYou cannot buy more Aircraft, because your Hangar is full!\r\nUpgrade it / Sell an Aircraft / Or lose one in fight')
       : buyF16(money, tempMoney, myData);
   }
 
   if (process.argv[2] === '-buyF35') {
     myData[4] == myData[1].split('_').length
-      ? console.log('\r\nYou cannot buy more Aircraft, becaouse your Hangar is full!\r\nUpgrade it / Sell an Aircraft / Or lose one in fight')
+      ? console.log('\r\nYou cannot buy more Aircraft, because your Hangar is full!\r\nUpgrade it / Sell an Aircraft / Or lose one in fight')
       : buyF35(money, tempMoney, myData);
   }
 

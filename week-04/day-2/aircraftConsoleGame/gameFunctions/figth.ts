@@ -16,8 +16,8 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   console.log(`The enemy dealt: ${dmgToMe} damage to your Carrier.\r\nYou have ${myCarrier.health} health left\r\n`);
 
   enemyCarrier.health <= 0
-    ? myData[2] === 10
-      ? console.log('Congratulation! You beat the game!\r\n\r\nStart a new game if you liked it!\r\n-newGame')
+    ? myData[6] === '10'
+      ? console.log('\r\n**************************************\r\n*                                    *\r\n* Congratulation! You beat the game! *\r\n*                                    *\r\n**************************************\r\n\r\nStart a new game if you liked it!\r\n-newGame')
       : console.log('Congratulation! You destroyed the enemy Carrier!\r\nGet ready for the next level\r\n\r\nCheck it out with -status')
     : myCarrier.health <= 0
       ? console.log('You have lost the game, because your Carrier has been destroyed! :(')
@@ -34,8 +34,9 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   myData[1] = myCarrier.aircrafts.map(e => `${e.type},${e.currentAmmo}`).join('_');
   enemyData[1] = enemyCarrier.aircrafts.map(e => `${e.type}`).join('_');
 
-  if (enemyCarrier.health <= 0) {
-    myData[5] = money + 10000;
+  if (enemyCarrier.health <= 0 && myData[6] < 10) {
+    money += 10000;
+    myData[5] = money;
     console.log('As an award you got 10000$ to your account')
   } else {
     myData[5] = money;
@@ -51,3 +52,5 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   
   console.log(`\r\nYou have ${money}$ left!`);
 }
+
+
