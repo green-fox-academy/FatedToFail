@@ -10,7 +10,7 @@ You have:        ${money}$ on your account
                  ${myCarrier.aircrafts.filter(e => e.type === 'F35').length} pc(s) F35 Aricraft Fighter  ammo: 14           (cost: 4000$)  /-buyF35/
 
                                                                                  To upgrade type:
-You are on the:  ${myData[2]} level on F16 Aircraft Fighters from 3  (upgrade cost: 3000$)  /-upgF16/
+You are on the:  ${myData[2]} level on F16 Aircraft Fighters from 3  (upgrade cost: 2000$)  /-upgF16/
                  ${myData[3]} level on F35 Aircraft Fighters from 3  (upgrade cost: 3000$)  /-upgF35/
                  ${(myData[4] - 4) / 2} level on your Hangar from 3            (upgrade cost: 3000$)  /-upgHangar/
                  ${Math.floor((1.26 - myData[0].split(',')[1]) * 4)} level on your shield from 3            (upgrade cost: 3000$)  /-upgShield/

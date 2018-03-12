@@ -6,8 +6,8 @@ export function upgF35(money: number, tempMoney: number, myData: any[]) {
   
   const cost: number = 3000;
 
-  if(money + 3000 < cost) {
-    console.log(`\r\nYou cant purchase upgrade/Aircraft, if you would left with less than 1000$`)
+  if(money + 1000 < cost) {
+    console.log(`\r\nYou cant purchase upgrade/Aircraft, if you would left with less than 1000$`);
   } else {
     myData[3] == 1
       ? myData[3] = 2

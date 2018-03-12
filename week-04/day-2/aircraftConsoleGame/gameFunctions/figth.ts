@@ -4,12 +4,12 @@ const fs = require('fs');
 'use strict';
 export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, myCarrier: Carrier, myData: any[], enemyData: any[]) {
   money = myCarrier.fill(money);
-  console.log(`\r\nYou spent ${tempMoney - money}$ to refill your Aircrafts\r\n`)
+  console.log(`\r\nYou spent ${tempMoney - money}$ to refill your Aircrafts\r\n`);
   
-  console.log('Your figthers:')
+  console.log('Your figthers:');
   let dmgToEnemy: number = myCarrier.fight(enemyCarrier);
   
-  console.log('\r\nEnemy fighters:')
+  console.log('\r\nEnemy fighters:');
   let dmgToMe: number = enemyCarrier.fight(myCarrier);
   
   console.log(`\r\nYou dealt: ${dmgToEnemy} damage to the enemy Carrier.\r\nIt has ${enemyCarrier.health} health left\r\n`);
@@ -35,9 +35,9 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   enemyData[1] = enemyCarrier.aircrafts.map(e => `${e.type}`).join('_');
 
   if (enemyCarrier.health <= 0 && myData[6] < 10) {
-    money += 10000;
+    money += 5500 + myData[6] * 500;
     myData[5] = money;
-    console.log('As an award you got 10000$ to your account')
+    console.log(`As an award you got ${5500 + myData[6] * 500}$ to your account`);
   } else {
     myData[5] = money;
   }
@@ -52,5 +52,3 @@ export function fight(money: number, tempMoney: number, enemyCarrier: Carrier, m
   
   console.log(`\r\nYou have ${money}$ left!`);
 }
-
-

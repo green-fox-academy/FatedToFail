@@ -4,10 +4,10 @@ const fs = require('fs');
 
 export function upgF16(money: number, tempMoney: number, myData: any[]) {
   
-  const cost: number = 1000;
+  const cost: number = 2000;
 
-  if(money + 3000 < cost) {
-    console.log(`\r\nYou cant purchase upgrade/Aircraft, if you would left with less than 1000$`)
+  if(money + 1000 < cost) {
+    console.log(`\r\nYou cant purchase upgrade/Aircraft, if you would left with less than 1000$`);
   } else {
     myData[2] == 1
       ? myData[2] = 2

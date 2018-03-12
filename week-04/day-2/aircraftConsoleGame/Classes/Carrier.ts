@@ -44,13 +44,12 @@ export default class Carrier {
   }
 
   fight(enemy: Carrier): number {
-    let tempDamage: number = this.aircrafts.map(e => e.howToFight()).reduce((p, c) => p + c);
+    let tempDamage: number = this.aircrafts.map(e => e.type === 'F16' ? e.howToFight() / enemy.shield : e.howToFight()).reduce((p, c) => p + c);
     enemy.takeDmg(tempDamage);
-    return tempDamage * enemy.shield;
+    return Math.floor(tempDamage * enemy.shield + 0.99);
   }
 
   getStatus() {
     return `HP: ${this.health}, F35 count: ${this.aircrafts.filter(e => e.isPriority()).length}, F16 count: ${this.aircrafts.filter(e => !e.isPriority()).length}`;
   }
 }
-
