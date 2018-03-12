@@ -25,7 +25,7 @@ let check: string[] = ['-fight', '-upgShield', '-upgF16', '-upgF35', '-newGame',
 
 let myData: any[] = fs.readFileSync('./gameData/myCarrier.txt', 'utf-8').split(';');
 let enemyData: any[] = fs.readFileSync(`./gameData/enemy${myData[6]}.txt`, 'utf-8').split(';');
-let reset: string[] = ['', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;2', '1500,1;F16_F16_F35_F35;2', '2000,1;F16_F16_F35_F35;2', '2000,1;F16_F16_F35;3', '2500,0.8;F16_F16_F35_F35;3'];
+let reset: string[] = ['', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35;1', '1500,1;F16_F16_F35_F35;2', '2500,1;F16_F16_F35_F35;1', '1750,0.5;F16_F16_F35;1', '500,0;F16_F16_F35;2', '1750,0.8;F16_F16_F35_F35;2', '2000,0.8;F16_F16_F35_F35;2', '2250,0.6;F16_F16_F35_F35;3', '2500,0.4;F16_F16_F35_F35_F35_F35;3'];
 
 if (check.indexOf(process.argv[2]) === -1) {
   console.log(`\r\nYou just typed a command that is not exist: ${process.argv[2]}\r\nCheck out /ts-node game/ to get the correct commands`);
