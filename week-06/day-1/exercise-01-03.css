@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  flex-direction: row-reverse;
 }
 
 .item {
@@ -9,12 +10,15 @@
 
 .yellow {
   background-color: yellow;
+  flex: 2;
 }
 
 .green {
   background-color: green;
+  flex: 1;
 }
 
 .purple {
   background-color: purple;
+  flex: 1;
 }
