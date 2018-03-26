@@ -1,0 +1,49 @@
+.container {
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 1200px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+header {
+  background-color: cyan;
+  height: 100px;
+  width: 100%;
+}
+
+.sideBar {
+  width: 100px;
+  height: 1000px;
+}
+
+main {
+  background-color: red;
+  flex-grow: 1;
+  margin: 0 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: blue;
+}
+
+.one {
+  background-color: orange;
+}
+
+.two {
+  background-color: purple;
+}
+
+.blackbox {
+  background-color: black;
+  width: 150px;
+  height: 150px;
+  margin: 20px;
+}
