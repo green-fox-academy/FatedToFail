@@ -1,0 +1,41 @@
+.container {
+  margin: 0 auto;
+  display: flex;
+  width: 800px;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.item {
+  height: 30px;
+  background-color: cyan;
+  margin: 15px;
+}
+
+header {
+  flex: 1 1 100%;
+  background-color: purple;
+  display: flex;
+}
+
+main {
+  flex: 2 2 66%;
+  background-color: yellow;
+  height: 500px;
+}
+
+.sideBar {
+  flex: 1 1 33%;
+  background-color: green;
+  height: 500px;
+}
+
+.one {
+  width: 100px;
+}
+.two {
+  width: 75px;
+}
+.three {
+  width: 125px;
+}
