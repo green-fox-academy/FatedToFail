@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Workshop: innerHTML, textContent</title>
+  </head>
+  <body>
+    <p class="apple">apple</p>
+    <p class="balloon">banana</p>
+    <p class="cat">car</p>
+    <p class="animals">goat rabbit <strong>cat</strong> dog</p>
+
+    <script>
+      /*fill every paragraph with the last one's content.
+      fill every paragraph with the last one's content keeping the cat strong.*/
+      const pS = document.querySelectorAll('body p');
+      //pS.forEach(e => e.innerText = pS[3].textContent);
+      console.log(pS[3]);
+      pS.forEach(e => e.innerHTML = pS[3].innerHTML);
+
+    </script>
+  </body>
+</html>
