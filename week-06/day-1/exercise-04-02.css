@@ -1,0 +1,70 @@
+header {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: purple;
+}
+
+.wrapper {
+  display: flex;
+  margin: 10px auto;
+  max-width: 900px;
+  align-items: center;
+}
+
+.item {
+  height: 25px;
+  margin-right: 10px;
+  background-color: cyan;
+}
+
+.one {
+  width: 50px;
+}
+.two {
+  width: 65px;
+}
+.three {
+  width: 40px;
+}
+.four {
+  width: 50px;
+}
+
+.container {
+  display: flex;
+  background: #ccc;
+  flex-wrap: wrap;
+  max-width: 900px;
+  height: 1200px;
+  margin: 0 auto;
+}
+
+.forGood {
+  height: 45px;
+  width: 100%;
+}
+
+.sideBar {
+  margin: 10px 10px 10px 0;
+  height: calc(100% - 175px);
+  flex-grow: 1;
+  width: 20%;
+  background-color: green;
+}
+
+main {
+  margin: 10px 0 10px 10px;
+  height: calc(100% - 175px);
+  width: 40%;
+  flex-grow: 2;
+  background-color: yellow;
+}
+
+footer {
+  margin: 10px 0;
+  height: 100px;
+  width: 100%;
+  background-color: gray;
+}
