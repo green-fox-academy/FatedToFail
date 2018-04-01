@@ -15,8 +15,8 @@ class Domino implements Comparable {
       this.values = [valueA, valueB];
   }
 
-  compareTo(thisDomino: Domino): number {  
-    return this.values[0] - thisDomino.values[0];
+  compareTo(thisDomino: Comparable): number {  
+    return this.values[0] - (<Domino>thisDomino).values[0];
   }
 }
 

@@ -7,7 +7,7 @@ export function upgShield(money: number, tempMoney: number, myData: any[]) {
   let data: string = myData[0];
   const cost: number = 3000;
 
-  if(money + 1000 < cost) {
+  if(money < cost + 1000) {
     console.log(`\r\nYou cant purchase upgrade/Aircraft, if you would left with less than 1000$`);
   } else {
     data.split(',')[1] === '1'

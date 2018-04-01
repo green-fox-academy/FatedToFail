@@ -6,7 +6,7 @@ export function buyF35(money: number, tempMoney: number, myData: any[]) {
   
   const cost: number = 4000;
   
-  if(money + 1000 < cost) {
+  if(money < cost + 1000) {
     console.log(`\r\nYou cant purchase upgrade/Aircraft, if you would left with less than 1000$`);
   } else {
     myData[1] === ''
