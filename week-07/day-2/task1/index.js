@@ -39,3 +39,9 @@ app.get('/greeter', (req, res) => {
     });
   }
 });
+
+app.get('/appenda/:string', (req, res) => {
+  res.json({
+    appended: req.params.string + 'a'
+  });
+});
