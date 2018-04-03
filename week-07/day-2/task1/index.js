@@ -97,3 +97,38 @@ app.post('/arrays', (req, res) => {
     })
   }
 });
+
+let yoda = (text) => {
+  const rngText = ['Arrgh. Uhmm.', 'Err..err.err.', 'Uhh... pada... wannn.', 'Young one... the phorce...'];
+  let tempText = '';
+  return text
+    .split('. ')
+    .map(e => 
+      e.
+        split(' ')
+        .map((e, i, a) => {
+          if(i === 0) {
+            tempText = e;
+            return a[i + 1].split('').map((e, i) => i === 0 ? e.toUpperCase() : e).join('');
+          } else if(i % 2 === 1) {
+            return tempText.toLowerCase()
+          } else if(a[i + 1] ===  undefined) {
+            return e;
+          } else {
+            tempText = e;
+            return a[i + 1];
+          }
+        }
+      ).join(' ')
+    ).join(`. ${rngText[Math.floor(Math.random() * 4)]} `)
+    .concat(` ${rngText[Math.floor(Math.random() * 4)]}`);
+}
+
+app.post('/sith', (req, res) => {
+  console.log(req.body.text);
+  if(req.body.text === undefined) {
+    res.json({error: 'Feed me some text you have to, padawan young you are. Hmmm.'});
+  } else {
+    res.json({sith_text: yoda(req.body.text)});
+  }
+});
