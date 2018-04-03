@@ -103,25 +103,25 @@ let yoda = (text) => {
   let tempText = '';
   return text
     .split('. ')
-    .map(e => 
-      e.
-        split(' ')
-        .map((e, i, a) => {
-          if(i === 0) {
-            tempText = e;
-            return a[i + 1].split('').map((e, i) => i === 0 ? e.toUpperCase() : e).join('');
-          } else if(i % 2 === 1) {
-            return tempText.toLowerCase()
-          } else if(a[i + 1] ===  undefined) {
-            return e;
-          } else {
-            tempText = e;
-            return a[i + 1];
-          }
-        }
-      ).join(' ')
-    ).join(`. ${rngText[Math.floor(Math.random() * 4)]} `)
-    .concat(` ${rngText[Math.floor(Math.random() * 4)]}`);
+    .map((e, i, a) => 
+      i < a.length - 1
+        ? e.
+          split(' ')
+          .map((e, i, a) => {
+            if(i === 0) {
+              tempText = e;
+              return a[i + 1].split('').map((e, i) => i === 0 ? e.toUpperCase() : e).join('');
+            } else if(i % 2 === 1) {
+              return tempText.toLowerCase()
+            } else if(a[i + 1] ===  undefined) {
+              return e;
+            } else {
+              tempText = e;
+              return a[i + 1];
+            }
+          }).join(' ')
+        : e
+    ).join(`. ${rngText[Math.floor(Math.random() * 4)]} `);
 }
 
 app.post('/sith', (req, res) => {
