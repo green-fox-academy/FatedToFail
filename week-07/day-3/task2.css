@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+input, label, p , a{
+  display: block;
+  margin: 0 0 0.8em 33px;
+  width: 80%;
+  color: #494949;
+}
+
+input {
+  height: 30px;
+  font-size: 1.5rem;
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+}
+
+input:focus {
+  border: 1px solid #008100;
+  outline: none;
+}
+
+input[type="submit"] {
+  font-size: 1rem;
+  box-sizing: content-box;
+  width: 30%;
+  margin-bottom: 100px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+label {
+  font-size: 0.6rem;
+}
+
+p {
+  padding-top: 30px;
+  font-size: 1.5rem;
+}
+
+a {
+  text-align: right;
+  text-decoration: none;
+  position: relative;
+  top: -13px;
+}
+
+body{
+  background-color: gray;
+  font-size: 10px;
+}
+
+legend {
+  border-radius: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  max-width: 350px;
+  margin: 50px auto;
+  height: 300px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
