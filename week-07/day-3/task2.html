@@ -16,6 +16,19 @@
     <input type="password" id="password">
     <a href="./task2.html">Forgot Password?</a>
     <input type="submit" value="Login">
+    <img src="eye.svg" alt="">
   </legend>
+  <script>
+    const body = document.body.querySelector('legend');
+    change = (e) => {
+      body.querySelector('img').getAttribute('src') === 'eye.svg'
+        ? body.querySelector('#password').setAttribute('type', 'text')
+        : body.querySelector('#password').setAttribute('type', 'password');
+      body.querySelector('img').getAttribute('src') === 'eye.svg'
+        ? body.querySelector('img').setAttribute('src', 'eye-slash.svg')
+        : body.querySelector('img').setAttribute('src', 'eye.svg');
+      }
+    body.querySelector('img').addEventListener('click', change);
+  </script>
 </body>
 </html>

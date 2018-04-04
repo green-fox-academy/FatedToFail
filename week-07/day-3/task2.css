@@ -55,6 +55,7 @@ body{
 }
 
 legend {
+  position: relative;
   border-radius: 6px;
   display: flex;
   flex-wrap: wrap;
@@ -63,4 +64,12 @@ legend {
   margin: 50px auto;
   height: 300px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+img {
+  position: absolute;
+  top: 178.5px;
+  left: 286px;
+  width: 20px;
+  height: 20px;;
 }
