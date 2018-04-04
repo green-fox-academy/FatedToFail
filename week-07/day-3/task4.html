@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .visible {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <select name="Select a genre" id="genre">
+    <option selected="selected" disabled>Select a genre</option>
+    <option>Sci-fi</option>
+    <option>Drama</option>
+    <option>Comedy</option>
+  </select>
+  <select name="Select a movie" id="movie">
+    <option selected="selected" disabled>Select a movie</option>
+  </select>
+  <p></p>
+</body>
+<script>
+  const genreSelect = document.body.querySelector('#genre');
+  const movieSelect = document.body.querySelector('#movie');
+  const movies = [
+    {name: 'Moon', genres: 'Sci-fi Comedy'},
+    {name: '2001 Space odessy', genres: 'Sci-fi'},
+    {name: 'Contact', genres: 'Drama Comedy'},
+    {name: 'Darkest hour', genres: 'Sci-fi Comedy Drama'},
+    {name: 'There will be blood', genres: 'Comedy'},
+    {name: 'American beauty', genres: 'Comedy Drama'},
+    {name: 'Airplane!', genres: 'Sci-fi'},
+    {name: 'Deadpool', genres: 'Comedy'},
+    {name: 'Wayne\'s World', genres: 'Drama'}
+  ];
+  setUpMovies = () => {
+    movies.forEach(movie => {
+      const tempMovie = movieSelect.appendChild(document.createElement('option'));
+      tempMovie.innerText = movie.name;
+      tempMovie.setAttribute('class', `${movie.genres} visible`);
+    });
+  }
+  window.onload = () => {
+    setUpMovies();
+  }
+  genreSelect.addEventListener('change', (e) => {
+    movieSelect.querySelectorAll('option').forEach(movie => {
+      movie.classList.add('visible');
+      movie.removeAttribute('selected');
+      if(movie.classList.contains(e.target.value)) {
+        movie.classList.remove('visible');
+      }
+    });
+  });
+  movieSelect.addEventListener('change', (e) => {
+    document.body.querySelector('p').innerText = e.target.value;
+  });
+</script>
+</html>
