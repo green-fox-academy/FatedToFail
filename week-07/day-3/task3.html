@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <fieldset>
+    <legend>What is your favourite pet?</legend>
+      <label for="rad1">Dog</label>
+      <input type="radio" name="hi" value="d1" id="rad1">
+      <label for="rad2">Cat</label>
+      <input type="radio" name="hi" value="d2" id="rad2">
+      <label for="rad3">Viktor the goldfish</label>
+      <input type="radio" name="hi" value="d3" id="rad3">  
+  </fieldset>
+  <fieldset>
+    <legend>Do you want to sign up for cat facts?</legend>
+    <label for="yes">Yes</label>
+    <input type="radio" name="dog" id="yes">
+    <label for="no">No</label>
+    <input type="radio" name="dog" id="no">
+  </fieldset>
+  <input type="button" value="I Love Cats" disabled>
+  <input type="button" value="Sign Up" disabled>
+</body>
+<script>
+  const fieldsets = document.body.querySelectorAll('fieldset');
+  const yes = fieldsets[1].querySelector('#yes');
+  yes.onclick = () => {
+    document.body.querySelector('input[value="I Love Cats"]').disabled = false;
+  };
+  const no = fieldsets[1].querySelector('#no');
+  no.onclick = () => {
+    document.body.querySelector('input[value="I Love Cats"]').disabled = true;
+  };
+  const pets = fieldsets[0].querySelectorAll('input');
+  pets.forEach(pet => {
+    pet.addEventListener('click', (e) => {
+      if(e.target.id === "rad3") {
+        document.body.querySelector('input[value="Sign Up"]').disabled = true;
+      } else {
+        document.body.querySelector('input[value="Sign Up"]').disabled = false;
+      }
+    });
+  });
+
+</script>
+</html>
