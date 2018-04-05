@@ -24,3 +24,14 @@ app.get('/greeting', (req, res) => {
     name: name,
   });
 });
+
+app.get('/todos', (req, res) => {
+  const todos = [
+    'get up',
+    'survive',
+    'go back to bed',
+  ];
+  res.render('todos', {
+    list: todos,
+  });
+});
