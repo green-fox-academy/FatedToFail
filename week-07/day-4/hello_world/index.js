@@ -14,3 +14,13 @@ app.get('/', (req, res) => {
     title: 'Hi there',
   });
 });
+
+app.get('/greeting', (req, res) => {
+  let name = '';
+  req.query.name === undefined
+    ? name = 'Guest'
+    : name = req.query.name;
+  res.render('greetings', {
+    name: name,
+  });
+});
