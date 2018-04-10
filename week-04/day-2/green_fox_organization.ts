@@ -1,5 +1,7 @@
 'use srict';
 
+function gkgje(a: number, b: string)
+
 class Person {
 
   name: string;
