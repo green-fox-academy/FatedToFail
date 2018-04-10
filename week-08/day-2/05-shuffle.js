@@ -26,7 +26,7 @@ const Shuffler = {
     } else {
       this.cash -= 1000 * (1 + parseInt(Cyprus.tax) / 100);
       Cyprus.deposit();
-      console.log('Cyprus got 1000');;
+      console.log('Cyprus got 1000');
     }
   }
 };
