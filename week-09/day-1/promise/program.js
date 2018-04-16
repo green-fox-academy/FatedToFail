@@ -46,9 +46,9 @@
 
   // The way you have learned: create promise through the constructor.
 
-  var promise = new Promise(function (fulfill, reject) {
-    fulfill('SECRET VALUE');
-  });
+  // var promise = new Promise(function (fulfill, reject) {
+  //   fulfill('SECRET VALUE');
+  // });
 
   // Introducing: Promise.resolve
   // It does the exact same thing as above:
