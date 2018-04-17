@@ -37,4 +37,14 @@ app.get('/yondu', (req, res) => {
   }
 });
 
+let cargo = {
+  "caliber25": 0,
+  "caliber30": 0,
+  "caliber50": 0
+}
+
+app.get('/rocket', (req, res) => {
+
+});
+
 module.exports = app;
