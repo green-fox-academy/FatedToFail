@@ -1,19 +1,19 @@
 const body = document.querySelector('body');
 const main = document.querySelector('main');
 const XHR = new XMLHttpRequest;
-const input = document.querySelector('input');
-const btn = document.querySelector('input[type="button"]');
-input.value = '';
+const inputField = document.querySelector('input');
+const submitButton = document.querySelector('input[type="button"]');
+inputField.value = '';
 
-btn.onclick = () => {
+submitButton.onclick = () => {
   
   main.querySelectorAll('div').forEach(div => main.removeChild(div));
   
-  XHR.open('GET', `https://swapi.co/api/people/?search=${input.value}`, true);
+  XHR.open('GET', `https://swapi.co/api/people/?search=${inputField.value}`, true);
 
   XHR.onload = () => {
     JSON.parse(XHR.response).results.forEach(person => {
-      if (person.name.toLowerCase().indexOf(input.value.toLocaleLowerCase()) !== -1) {
+      if (person.name.toLowerCase().indexOf(inputField.value.toLocaleLowerCase()) !== -1) {
 
         function getAttributes() {
           return `Height: ${person.height}</br>Mass: ${person.mass}</br>Hair color: ${person.hair_color}</br>Skin color: ${person.skin_color}</br>Eye color: ${person.eye_color}</br>Gender: ${person.gender}</br>Birth year: ${person.birth_year}`
@@ -32,7 +32,7 @@ btn.onclick = () => {
         main.appendChild(content);
         main.style.top = '77%';
         //main.classList.add('starwarslike');
-        input.value = '';
+        inputField.value = '';
       }
     });
   };
@@ -40,16 +40,16 @@ btn.onclick = () => {
   XHR.send();
 };
 
-input.addEventListener('keyup', (e) => {
+inputField.addEventListener('keyup', (e) => {
   if (e.keyCode === 13) { 
     
     main.querySelectorAll('div').forEach(div => main.removeChild(div));
     
-    XHR.open('GET', `https://swapi.co/api/people/?search=${input.value}`, true);
+    XHR.open('GET', `https://swapi.co/api/people/?search=${inputField.value}`, true);
 
     XHR.onload = () => {
       JSON.parse(XHR.response).results.forEach(person => {
-        if (person.name.toLowerCase().indexOf(input.value.toLocaleLowerCase()) !== -1) {
+        if (person.name.toLowerCase().indexOf(inputField.value.toLocaleLowerCase()) !== -1) {
 
           function getAttributes() {
             return `Height: ${person.height}</br>Mass: ${person.mass}</br>Hair color: ${person.hair_color}</br>Skin color: ${person.skin_color}</br>Eye color: ${person.eye_color}</br>Gender: ${person.gender}</br>Birth year: ${person.birth_year}`
@@ -72,7 +72,7 @@ input.addEventListener('keyup', (e) => {
       });
     }
     XHR.send();
-    input.value = '';
+    inputField.value = '';
   };
 });
 

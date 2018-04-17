@@ -61,6 +61,75 @@
   //   reject(new Error('SECRET VALUE'));
   // });
 
-  var promise = Promise.reject(new Error('SECRET VALUE'));
+  // var promise = Promise.reject(new Error('SECRET VALUE'));
 
-  promise.catch(console.log)
+  // promise.catch(console.log)
+
+// first().then(second).then(console.log);
+
+// function parsePromised() {
+//   return new Promise((fulfill, reject) => {
+//     try {
+//       JSON.parse(process.argv[2])
+//     } catch (err) {
+//       reject(err);
+//     }
+//     fulfill('YAAAY');
+//   });
+// }
+
+function onError(error) {
+  console.log(error.message);
+}
+
+// parsePromised()
+//   .then(console.log)
+//   .catch(onError)
+
+// function alwaysThrows() {
+//   throw new Error('OH NOES');
+// }
+
+// function iterate(integer) {
+//   console.log(integer);
+//   return integer + 1;
+// }
+
+// Promise.resolve(1)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(alwaysThrows)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(iterate)
+//   .then(iterate)
+//   .catch(onError);
+
+
+
+function all(prom1, prom2) {
+  
+  let counter = 0;
+  let result = [];
+  
+  function fulfillIt(fullfill, place) {
+    return function(value) {
+      counter++;
+      result[place] = value;
+      if (counter === 2) {
+        fullfill(result);
+      }
+    };
+  }
+
+  return new Promise((fullfill, reject) => {
+    prom1.then(fulfillIt(fullfill, 0));
+    prom2.then(fulfillIt(fullfill, 1));
+  });
+}
+
+all(getPromise1(), getPromise2()).then(console.log);
