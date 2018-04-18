@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+.container > div {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  background: #fff;
+  transform: rotateZ(45deg);
+  border-radius: 8px;
+}
+
+.container > div > div {
+  position: relative;
+  box-sizing: border-box;
+  border: 4px solid orange;
+  border-radius: 8px;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  bottom: 100px;
+  transform: rotateZ(45deg);
+  transition: 1s ease;
+}
+
+.container > div > div:hover {
+  transform: rotateZ(0);
+  color: orange;
+}
+
+@keyframes cica {
+  0% {
+    transform: rotateZ(45deg);
+  }
+  1% {
+    transform: none;
+  }
+}
+
+div > p {
+  transition: 1s ease;
+  transform: rotateZ(-45deg);
+  line-height: 100px;
+  z-index: 9999999;
+  text-align: center;
+  font-weight: bold;
+}
+
+div > p:hover {
+  color: orange;
+}
