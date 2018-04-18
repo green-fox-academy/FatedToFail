@@ -3,16 +3,15 @@ const mysql = require('mysql');
 const PORT = 8080;
 let app = express();
 
-app.use('/static', express.static(__dirname + '/static'));
-
 let conn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '*******',
+  password: '6278pRn!',
   database: 'exam'
 });
 
 
+app.use('/static', express.static(__dirname + '/static'));
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/static/index.html');

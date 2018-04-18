@@ -1,0 +1,24 @@
+{
+  "name": "corsac-orientation-exam",
+  "version": "1.0.0",
+  "description": "It's exciting to think of all the cool things we might see and experience by the year 2050.\r For example we might be able to travel through space and might populate other planets in the Solar System or much farther.\r Build a spaceship that can transport people from one planet to another.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greenfox-academy/corsac-orientation-exam.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/greenfox-academy/corsac-orientation-exam/issues"
+  },
+  "homepage": "https://github.com/greenfox-academy/corsac-orientation-exam#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
+  }
+}
