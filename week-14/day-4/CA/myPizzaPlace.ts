@@ -1,50 +1,58 @@
 'use strict';
 
 import { OrderQueue } from './orderQueue';
-import { Cola } from './cola';
-import { Hamburger } from './hamburger';
-import { Pizza } from './pizza';
 import { Order } from './order';
-import { Food } from './food';
+import { Goods } from './goods';
+import { Pizza } from './pizza';
 
 export class MyPizzaPlace implements OrderQueue {
 
   orderQueue: Order[];
   private maxCapacity: number;
+  private static profit: number = 0;
 
   constructor() {
-    this.maxCapacity = 100;
+    this.maxCapacity = 50;
     this.orderQueue = [];
   }
 
-  placeOrder(customer: string, homeDelivery: boolean, typeOfFood: Food): void {
+  placeOrder(customer: string, homeDelivery: boolean, typeOfGoods: Goods): void {
     const capacityUtilisation: number = this.getCapacity();
 
     if (capacityUtilisation < this.maxCapacity) {
-      this.orderQueue.push(new Order(customer, homeDelivery, typeOfFood));
+      this.orderQueue.push(new Order(customer, homeDelivery, typeOfGoods));
       console.log('The order is placed!');
     } else {
-      console.log('Sorry we don\'t have capacity for your order now \r\n Please try again later!');
+      console.log('Sorry we don\'t have capacity for your order now \r\nPlease try again later!');
     }
   }
 
-  serveOrder(index: number): void {
-    const order = this.orderQueue[index];
-    
-    this.orderQueue.splice(index, 1);
-    console.log(`For ${order.customer} the ${order.orderPlacedOn.name} was ${order.isHomeDelivery ? 'delivered' : 'served'}!`);
+  serveNextOrder(): void {
+    if (this.orderQueue.length !== 0)  {
+      const firstOrderIndex = 0;
+      const firstOrder = this.orderQueue[firstOrderIndex];
+      
+      this.orderQueue.splice(firstOrderIndex, 1);
+      MyPizzaPlace.profit += firstOrder.orderPlacedOn.price;
+
+      console.log(`For ${firstOrder.customer} the ${firstOrder.orderPlacedOn.name} was ${firstOrder.isHomeDelivery ? 'delivered' : 'served'}!`);
+    } else {
+      console.log('We are out of orders!');
+    }
   }
 
   orderStatus(): string {
     const capacityUtilisation: number = this.getCapacity();
 
-    return `We have ${this.orderQueue.length} order in our Queue and ${this.maxCapacity > capacityUtilisation ? 'have' : 'don\'t have'} capacity for more orders`;
+    return `We have ${this.orderQueue.length} order in our Queue and ${this.maxCapacity > capacityUtilisation ? 'have' : 'don\'t have'} capacity for more orders\r\nOur profit is: ${MyPizzaPlace.profit} HUF`;
   }
 
   private getCapacity(): number {
-    return this.orderQueue
-      .map((order: Order): number => order.orderPlacedOn.timeUntilReady)
-      .reduce((servingTimeA, servingTimeB) => servingTimeA + servingTimeB);
+    return this.orderQueue.length === 0
+      ? 0
+      : this.orderQueue
+        .map((order: Order): number => order.orderPlacedOn.timeUntilReady)
+        .reduce((servingTimeA, servingTimeB) => servingTimeA + servingTimeB);
   }
 
 }

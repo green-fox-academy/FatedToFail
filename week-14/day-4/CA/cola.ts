@@ -1,14 +1,11 @@
 'use strict';
 
-import { Food } from './food';
+import { Drink } from "./drink";
 
-export class Cola extends Food {
+export class Cola extends Drink {
 
   constructor() {
-    super();
-    this.name = 'Cola';
-    this.price = 350;
-    this.timeUntilReady = 0;
+    super('Cola', 350, 1, 500);
   }
 
 }

@@ -1,17 +1,17 @@
 'use strict';
 
-import { Food } from './food';
+import { Goods } from './goods';
 
 export class Order {
   
   customer: string;
   isHomeDelivery: boolean;
-  orderPlacedOn: Food;
+  orderPlacedOn: Goods;
 
-  constructor(customerName: string, homeDelivery: boolean, food: Food) {
+  constructor(customerName: string, homeDelivery: boolean, goods: Goods) {
     this.customer = customerName;
     this.isHomeDelivery = homeDelivery;
-    this.orderPlacedOn = food;
+    this.orderPlacedOn = goods;
   }
 
 }
